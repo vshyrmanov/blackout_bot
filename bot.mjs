@@ -10,11 +10,11 @@ const IP = process.env.IP;
 // }
 
 // bot.on('text', msg => msg.reply.text(msg.text))
-bot.on('message',  (msg) => {
-	const chatId = msg.chat.id;
+bot.on('message',  async (msg) => {
+	const chatId = msg.from.id;
 	const text = msg.text;
 	if (text === '/start') {
-		bot.sendMessage(chatId, 'Привіт друже')
+		await bot.sendMessage(chatId, 'Привіт друже')
 	}
 	// if (text === '/black') {
 	// 	const msg = test()
