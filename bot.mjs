@@ -9,17 +9,17 @@ const IP = process.env.IP;
 // 	return res.alive
 // }
 
-// bot.on('text', msg => msg.reply.text(msg.text))
-bot.on('message',  async (msg) => {
-	const chatId = msg.from.id;
-	const text = msg.text;
-	if (text === '/start') {
-		await bot.sendMessage(chatId, 'Привіт друже')
-	}
-	// if (text === '/black') {
-	// 	const msg = test()
-	// 	bot.sendMessage(chatId, `${msg ? "Sun" : "Black"}`)
-	// }
-})
+bot.on('text', msg => msg.reply.text(msg.text))
+// bot.on('message',  async (msg) => {
+// 	const chatId = msg.from.id;
+// 	const text = msg.text;
+// 	if (text === '/start') {
+// 		await bot.sendMessage(chatId, 'Привіт друже')
+// 	}
+// 	// if (text === '/black') {
+// 	// 	const msg = test()
+// 	// 	bot.sendMessage(chatId, `${msg ? "Sun" : "Black"}`)
+// 	// }
+// })
 
 export default bot
