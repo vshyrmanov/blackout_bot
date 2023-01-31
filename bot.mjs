@@ -9,11 +9,11 @@ const test = async () => {
 	return res.alive
 }
 
-bot.on('text', msg => msg.reply.text(msg.text))
+// bot.on('text', msg => msg.reply.text(msg.text))
 bot.on('/start', msg => {
 	return bot.sendMessage(msg.from.id, "Privet druzhe");
 })
-bot.on('/blackout', async msg => {
+bot.on('/test', async msg => {
 	const testMsg = await test()
 	return bot.sendMessage(msg.from.id,`${testMsg ? "Svitlo yes" : "Svitlo NOOO"}`);
 })
