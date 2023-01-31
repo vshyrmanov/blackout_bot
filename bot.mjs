@@ -13,8 +13,8 @@ bot.on('text', msg => msg.reply.text(msg.text))
 bot.on('/start', msg => {
 	return bot.sendMessage(msg.from.id, "Privet druzhe");
 })
-bot.on('/blackout', msg => {
-	const testMsg = test()
+bot.on('/blackout', async msg => {
+	const testMsg = await test()
 	return bot.sendMessage(msg.from.id,`${testMsg ? "Svitlo yes" : "Svitlo NOOO"}`);
 })
 // bot.on('message',  async (msg) => {
