@@ -11,7 +11,7 @@ const test = async () => {
 
 // bot.on('text', msg => msg.reply.text(msg.text))
 bot.on('/start', msg => {
-	return bot.sendMessage(msg.from.id, IP);
+	return bot.sendMessage(msg.from.id, `${IP}`);
 })
 // bot.on('/black', msg => {
 // 	const testMsg = test()
