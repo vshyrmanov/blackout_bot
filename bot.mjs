@@ -1,11 +1,11 @@
 import TeleBot from "telebot"
-const ping = require('ping');
+import ping from "ping";
 
 const bot = new TeleBot(process.env.TG_TOKEN)
-const IP = process.env.IP;
+// const IP = process.env.IP;
 
 const test = async () => {
-	let res = await ping.promise.probe(IP);
+	let res = await ping.promise.probe("google.com");
 	return res.alive
 }
 
