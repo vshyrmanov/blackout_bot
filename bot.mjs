@@ -1,11 +1,11 @@
 import TeleBot from "telebot"
-import Ping from "ping";
+const ping = require('ping');
 
 const bot = new TeleBot(process.env.TG_TOKEN)
 const IP = process.env.IP;
 
 const test = async () => {
-	let res = await Ping.promise.probe(IP);
+	let res = await ping.promise.probe(IP);
 	return res.alive
 }
 
@@ -13,8 +13,8 @@ const test = async () => {
 bot.on('/start', msg => {
 	return bot.sendMessage(msg.from.id, "Privet druzhe");
 })
-bot.on('/test', async msg => {
-	const testMsg = await test()
+bot.on('/black', msg => {
+	const testMsg = test()
 	return bot.sendMessage(msg.from.id,`${testMsg ? "Svitlo yes" : "Svitlo NOOO"}`);
 })
 // bot.on('message',  async (msg) => {
