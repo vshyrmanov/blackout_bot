@@ -10,6 +10,9 @@ const IP = process.env.IP;
 // }
 
 bot.on('text', msg => msg.reply.text(msg.text))
+bot.on('/start', msg => {
+	return bot.sendMessage(msg.from.id, "Privet druzhe");
+})
 // bot.on('message',  async (msg) => {
 // 	const chatId = msg.from.id;
 // 	const text = msg.text;
