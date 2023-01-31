@@ -4,16 +4,17 @@ import ping from "ping";
 const bot = new TeleBot(process.env.TG_TOKEN)
 const IP = process.env.IP;
 
-const test = async () => {
-	let res = await ping.promise.probe("google.com");
-	return res.alive
-}
+
 
 // bot.on('text', msg => msg.reply.text(msg.text))
-bot.on('/start', async msg => {
-	const test = test()
+bot.on('/start', msg => {
+	const test = async () => {
+		let res = await ping.promise.probe("google.com");
+		return res.alive
+	}
 
-	return await bot.sendMessage(msg.from.id, `${test}`);
+
+	return bot.sendMessage(msg.from.id, `${test()}`);
 })
 // bot.on('/black', msg => {
 // 	const testMsg = test()
