@@ -10,9 +10,10 @@ const test = async () => {
 }
 
 // bot.on('text', msg => msg.reply.text(msg.text))
-bot.on('/start', msg => {
+bot.on('/start', async msg => {
 	const test = test()
-	return bot.sendMessage(msg.from.id, `${test}`);
+
+	return await bot.sendMessage(msg.from.id, `${test}`);
 })
 // bot.on('/black', msg => {
 // 	const testMsg = test()
