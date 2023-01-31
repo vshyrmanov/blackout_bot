@@ -2,7 +2,7 @@ import TeleBot from "telebot"
 import ping from "ping";
 
 const bot = new TeleBot(process.env.TG_TOKEN)
-// const IP = process.env.IP;
+const IP = process.env.IP;
 
 const test = async () => {
 	let res = await ping.promise.probe("google.com");
@@ -11,12 +11,12 @@ const test = async () => {
 
 // bot.on('text', msg => msg.reply.text(msg.text))
 bot.on('/start', msg => {
-	return bot.sendMessage(msg.from.id, "Privet druzhe");
+	return bot.sendMessage(msg.from.id, IP);
 })
-bot.on('/black', msg => {
-	const testMsg = test()
-	return bot.sendMessage(msg.from.id,`${testMsg ? "Svitlo yes" : "Svitlo NOOO"}`);
-})
+// bot.on('/black', msg => {
+// 	const testMsg = test()
+// 	return bot.sendMessage(msg.from.id,`${testMsg ? "Svitlo yes" : "Svitlo NOOO"}`);
+// })
 // bot.on('message',  async (msg) => {
 // 	const chatId = msg.from.id;
 // 	const text = msg.text;
