@@ -1,5 +1,7 @@
 import TeleBot from "telebot"
-import ping from "ping";
+// import ping from "ping";
+const exec = require('child_process').exec;
+
 
 const bot = new TeleBot(process.env.TG_TOKEN)
 const IP = process.env.IP;
@@ -8,13 +10,13 @@ const IP = process.env.IP;
 
 // bot.on('text', msg => msg.reply.text(msg.text))
 bot.on('/start', msg => {
-	const test = async () => {
-		let res = await ping.promise.probe("google.com");
-		return res.alive
-	}
+	exec("ping -c 3 82.193.102.33", function (err, stdout, stderr) {
+		// console.log(stdout);
+		return bot.sendMessage(msg.from.id, `${stdout}`);
+	});
 
 
-	return bot.sendMessage(msg.from.id, `${test()}`);
+
 })
 // bot.on('/black', msg => {
 // 	const testMsg = test()
