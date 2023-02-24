@@ -10,6 +10,6 @@
     "dotenv": "^16.0.3",
     "ping": "^0.4.2",
     "telebot": "^1.4.1",
-    "telebot-vercel": "0.0.5"
+    "telebot-vercel": "0.0.10"
   }
 }
